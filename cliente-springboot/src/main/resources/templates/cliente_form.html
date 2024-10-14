@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>Gestión de Clientes</title>
+	</head>
+	<body>
+		<div class="container" th:replace="fragments/header::header"></div>
+		<br>
+		<div class="container-fluid">
+			<h2 class="text-center">[[${pageTitle}]]</h2>
+			<div class="my-3">
+				<form th:action="@{/cliente/save}" method="post" enctype="multipart/form-data" 
+				th:object="${cliente}" style="max-width:550px; margin:0 auto;">
+					<div class="p-3">
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label" for="ci">CI</label>
+							<div class="col-sm-9">
+								<input type="text" th:field="*{ci}" required class="form-control" id="ci">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label" for="nombre">Nombre</label>
+							<div class="col-sm-9">
+								<input type="text" th:field="*{nombre}" required class="form-control" id="nombre">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label" for="apellido">Apellido</label>
+							<div class="col-sm-9">
+								<input type="text" th:field="*{apellido}" required class="form-control" id="apellido">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label" for="direccion">Dirección</label>
+							<div class="col-sm-9">
+								<input type="text" th:field="*{direccion}" required class="form-control" id="direccion">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label" for="telefono">Teléfono</label>
+							<div class="col-sm-9">
+								<input type="text" th:field="*{telefono}" required class="form-control" id="telefono">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label" for="email">Email</label>
+							<div class="col-sm-9">
+								<input type="text" th:field="*{email}" required class="form-control" id="email">
+							</div>
+						</div>
+						<div class="text-center">
+							<input type="submit" value="Guardar" class="btn btn-primary btn-sm mr-2"/>
+						</div>
+					</div>
+					
+			</form>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+	</body>
+	
+</html>
